@@ -2,217 +2,146 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Consórcio com Consultor Fabrício</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fabrício Cuchi - Consultor de Consórcios</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
-    /* Reset e base */
     * {
       box-sizing: border-box;
+      scroll-behavior: smooth;
     }
+
     body {
       margin: 0;
-      background-color: #2b2b2b; /* cinza escuro */
-      color: #eee;
       font-family: 'Poppins', sans-serif;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-    a {
-      color: gold;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-    a:hover {
-      color: #e6c200;
+      background-color: #fefefe;
+      color: #2d2d2d;
     }
 
     header {
-      background-color: #000;
+      background: #0b1e2e;
+      color: #f0f0f0;
+      padding: 4rem 1.5rem 3rem;
       text-align: center;
-      padding: 20px 0;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.8);
-    }
-    header img {
-      max-width: 180px;
-      height: auto;
     }
 
-    main {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
     }
 
-    h1, h2, h3 {
-      color: gold;
-      margin-bottom: 12px;
+    header p {
+      font-size: 1.2rem;
+      color: #d4af37;
     }
 
-    /* Texto padrão */
-    p {
-      margin-bottom: 16px;
-      color: #ddd;
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 3rem 1.5rem;
     }
 
-    /* Blocos */
     section {
-      background-color: #121212;
-      padding: 25px 30px;
+      margin-bottom: 4rem;
+      padding: 2rem;
+      background: #ffffff;
+      border-left: 6px solid #d4af37;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
       border-radius: 10px;
-      margin-bottom: 35px;
-      box-shadow: 0 0 10px rgba(255,215,0,0.1);
     }
 
-    /* Formulário */
-    form {
-      background-color: #000;
-      padding: 25px 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(255,215,0,0.3);
-      color: #eee;
+    section h2 {
+      color: #0b1e2e;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
     }
 
-    label {
-      display: block;
-      margin-bottom: 6px;
-      font-weight: 600;
+    section p, section ul {
+      font-size: 1.05rem;
+      line-height: 1.7;
     }
 
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"],
-    select,
-    textarea {
-      width: 100%;
-      padding: 12px 14px;
-      border: 2px solid #444;
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    ul li {
+      margin-bottom: 0.7rem;
+    }
+
+    .button {
+      display: inline-block;
+      background-color: #d4af37;
+      color: #0b1e2e;
+      padding: 14px 32px;
       border-radius: 8px;
-      background-color: #1a1a1a;
-      color: #eee;
-      font-size: 15px;
-      font-family: 'Poppins', sans-serif;
-      transition: border-color 0.3s;
-      resize: vertical;
-    }
-    input[type="text"]:focus,
-    input[type="email"]:focus,
-    input[type="tel"]:focus,
-    select:focus,
-    textarea:focus {
-      outline: none;
-      border-color: gold;
-      background-color: #222;
-    }
-
-    textarea {
-      min-height: 90px;
-    }
-
-    button[type="submit"] {
-      background-color: gold;
-      color: #000;
-      border: none;
-      padding: 15px 30px;
-      font-size: 17px;
-      font-weight: 700;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-      margin-top: 10px;
-    }
-    button[type="submit"]:hover {
-      background-color: #e6c200;
-    }
-
-    /* Mensagem de sucesso */
-    .success-message {
-      display: none;
-      margin-top: 20px;
-      background-color: #204214;
-      color: #a6d785;
-      padding: 15px 20px;
-      border-radius: 10px;
-      font-weight: 600;
-      box-shadow: 0 0 10px rgba(166,215,133,0.5);
-    }
-
-    /* Contato rápido */
-    .contatos {
-      text-align: center;
-      margin-bottom: 50px;
-    }
-    .contatos p {
-      font-size: 18px;
-      margin: 6px 0;
-    }
-    .contatos a {
-      font-weight: 600;
-    }
-
-    /* Redes sociais adicionais */
-    .redes-sociais {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    .redes-sociais a {
-      margin: 0 10px;
-      font-weight: 600;
-      color: gold;
       text-decoration: none;
-      font-size: 18px;
+      font-weight: 600;
+      margin-top: 1.5rem;
+      transition: background-color 0.3s;
+    }
+
+    .button:hover {
+      background-color: #c49e2c;
+    }
+
+    .contact-icons {
+      margin-top: 1rem;
+    }
+
+    .contact-icons a {
+      margin-right: 20px;
+      font-size: 1.6rem;
+      color: #0b1e2e;
       transition: color 0.3s;
     }
-    .redes-sociais a:hover {
-      color: #e6c200;
+
+    .contact-icons a:hover {
+      color: #d4af37;
     }
 
-    /* WhatsApp flutuante */
+    .quote {
+      font-style: italic;
+      text-align: center;
+      font-size: 1.2rem;
+      color: #555;
+      margin-top: 3rem;
+    }
+
+    footer {
+      background: #0b1e2e;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+    }
+
     .whatsapp-float {
       position: fixed;
-      bottom: 25px;
-      right: 25px;
-      background-color: #25d366;
-      width: 60px;
-      height: 60px;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
       border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
-      z-index: 1000;
-      transition: background-color 0.3s;
+      padding: 16px;
+      font-size: 28px;
+      z-index: 999;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s;
     }
+
     .whatsapp-float:hover {
-      background-color: #1ebe5c;
-    }
-    .whatsapp-float svg {
-      width: 32px;
-      height: 32px;
-      fill: white;
+      transform: scale(1.1);
     }
 
-    /* Rodapé */
-    footer {
-      text-align: center;
-      padding: 20px 10px;
-      background-color: #000;
-      color: #888;
-      font-size: 14px;
-      margin-top: 50px;
-      user-select: none;
-    }
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
 
-    @media (max-width: 600px) {
-      main {
-        margin: 30px 15px;
-      }
-      form {
-        padding: 20px 20px;
-      }
-      button[type="submit"] {
-        width: 100%;
+      section {
+        padding: 1.5rem;
       }
     }
   </style>
@@ -220,172 +149,90 @@
 <body>
 
   <header>
-    <img src="https://i.postimg.cc/wMPWky1K/Sem-t-tulo-removebg-preview.png" alt="Logo Raros Capital" />
+    <h1>Fabrício Cuchi</h1>
+    <p>Consultor de Consórcios • Planejamento de Alto Nível</p>
   </header>
 
-  <main>
-    <section class="contatos">
-      <h1>Consultor Fabrício</h1>
-      <p>WhatsApp: <a href="https://wa.me/5549933816445" target="_blank" rel="noopener">+55 49 93381-6445</a></p>
-      <p>Email: <a href="mailto:fabricio@raroscapital.com.br">fabricio@raroscapital.com.br</a></p>
-    </section>
-
-    <section class="redes-sociais">
-      <h2>Redes Sociais</h2>
-      <a href="https://www.instagram.com/raroscapital_/" target="_blank" rel="noopener">Raros Capital</a> |
-      <a href="https://www.instagram.com/fabricio_cuchi/" target="_blank" rel="noopener">Consultor Fabrício</a> |
-      <a href="https://www.instagram.com/bocamafrapremium/" target="_blank" rel="noopener">Administradora Bocamafra Premium</a> |
-      <a href="https://www.instagram.com/fcstore.consorcios/" target="_blank" rel="noopener">FC STORE Consórcios</a>
-    </section>
+  <div class="container">
 
     <section>
-      <h2>Vantagens do Consórcio</h2>
-      <p>O consórcio é uma forma planejada e econômica para você adquirir seu imóvel ou automóvel sem juros altos. Além disso, você conta com parcelas acessíveis e prazos flexíveis que cabem no seu bolso.</p>
+      <h2>Raros Capital</h2>
+      <p>Bem-vindo à <strong>Raros Capital</strong>, uma empresa que nasceu com um propósito claro: oferecer soluções financeiras inteligentes, acessíveis e seguras para quem busca realizar sonhos de forma planejada e estratégica. Somos especialistas em <strong>consórcios inteligentes</strong>, um modelo de investimento coletivo que une pessoas com o mesmo objetivo: adquirir bens de forma consciente, sem juros abusivos e com total transparência.</p>
+	<p>Na Raros Capital, entendemos que cada cliente é único e por isso oferecemos atendimento consultivo e personalizado, ajudando você a encontrar o plano de consórcio ideal para suas metas, seja comprar um imóvel, adquirir um veículo, investir no seu negócio ou até mesmo realizar projetos pessoais.<p>
+      </section>
+
+	<section>
+      <h2>Por que escolher a Raros Capital?</h2>
+        <p>✅ Consórcio Inteligente: Aqui, você participa de um sistema que valoriza o seu dinheiro. Em vez de pagar juros, você investe em crédito com correção e segurança.</p>
+	<p>✅ Planejamento e Liberdade: Sem surpresas. Você escolhe o valor da carta de crédito, o prazo e o tipo de bem que deseja. E pode usar seu FGTS (no caso de imóveis), ofertar lances e até antecipar parcelas.</p>
+	<p>✅ Atendimento Especializado: Nossa equipe é formada por consultores preparados para orientar você em cada etapa, do primeiro contato à contemplação.</p>
+	<p>✅ Parcerias com as maiores administradoras do país: Trabalhamos com instituições autorizadas e fiscalizadas pelo Banco Central, garantindo credibilidade e tranquilidade.</p>
+	<p>✅ Sem burocracia: Processo simples, digital e com total suporte ao longo do caminho.</p>
+    </section>
+
+
+    <section>
+      <h2>👤 Quem sou eu?</h2>
+      <p>Prazer, sou <strong>Fabrício Cuchi</strong>,  consultor especializado em <strong>consórcios de alto valor</strong> com ampla vivência no mercado financeiro e foco em estratégias inteligentes de aquisição de bens.</p>
+      <p>Atuo ajudando pessoas e empresas a realizar grandes conquistas com planejamento, segurança e eficiência, sem a necessidade de recorrer a financiamentos com juros elevados. Minha missão é tornar o consórcio uma ferramenta poderosa de crescimento patrimonial sempre com atendimento personalizado, clareza nas informações e suporte completo em todas as etapas, do início à contemplação.<p>
+	<p>Seja para aquisição de imóveis, veículos premium, investimentos ou projetos pessoais, ofereço soluções sob medida para quem busca crescer com inteligência e solidez financeira. <p>
+	<div class="contact-icons">
+        <a href="https://www.instagram.com/fabricio_cuchi/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="mailto:fabricio@raroscapital.com.br" title="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://wa.me/5549933816445" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>	
+
+	</section>
+
+    <section>
+      <h2>✅ Soluções que ofereço</h2>
       <ul>
-        <li>Sem juros – somente taxa de administração;</li>
-        <li>Planejamento financeiro facilitado;</li>
-        <li>Possibilidade de contemplação antecipada;</li>
-        <li>Liberdade para escolher o bem que deseja;</li>
-        <li>Seguro e regulamentado pelo Banco Central.</li>
+	<p>Como consultor especializado, ofereço um portfólio completo de soluções financeiras para quem busca realizar sonhos com inteligência, sem juros e com total segurança:<p>
+        <li><strong>Consórcio de Imóveis:</strong> Perfeito para quem deseja comprar, construir, reformar ou investir em imóveis residenciais, comerciais ou terrenos. Uma alternativa segura para sair do aluguel ou diversificar o patrimônio com planejamento.</li>
+        <li><strong>Consórcio de Veículos:</strong> Adquira carros, motos, caminhões ou veículos de alto padrão com economia, liberdade de escolha e parcelas que cabem no seu orçamento. Ideal para uso pessoal ou renovação de frota empresarial.</li>
+        <li><strong>Consórcio de Serviços:</strong> Transforme planos em realidade: viagens, procedimentos estéticos, cirurgias, festas, casamentos, cursos no exterior, MBAs e muito mais. Flexibilidade total para realizar o que realmente importa.</li>
+        <li><strong>Consultoria Financeira Estratégica: </strong> Mais do que vender um consórcio, ofereço orientação personalizada para você tomar decisões inteligentes: desde a melhor escolha de grupo, até estratégias de lance, contemplação e uso eficiente da carta de crédito.</li>
       </ul>
     </section>
 
     <section>
-      <h2>Sobre a Administradora Bocamafra Premium</h2>
-      <p>A Bocamafra Premium Consórcios é uma administradora sólida e confiável, especializada em consórcios para imóveis e automóveis. Com anos de experiência no mercado, oferece soluções personalizadas que atendem às necessidades de seus clientes.</p>
+      <h2>🚀 Diferenciais do meu atendimento</h2>
       <ul>
-        <li>Administradora autorizada e regulamentada pelo Banco Central do Brasil;</li>
-        <li>Foco em transparência e atendimento personalizado;</li>
-        <li>Planos flexíveis com valores e prazos que cabem no seu orçamento;</li>
-        <li>Facilidade no processo de adesão e contemplação;</li>
-        <li>Ampla carteira de clientes satisfeitos em todo o Brasil.</li>
-      </ul>
-      <p>Para saber mais sobre a Bocamafra Premium e seus planos, visite <a href="https://bocamafrapremium.com.br/consorcio/" target="_blank" rel="noopener">bocamafrapremium.com.br</a>.</p>
-    </section>
-
-    <section>
-      <h2>Como Funciona o Consórcio?</h2>
-      <p>Você participa de um grupo de pessoas com o mesmo objetivo, pagando parcelas mensais para formar um fundo comum. A cada mês, são realizadas assembleias para contemplar participantes por sorteio ou lance, garantindo que todos tenham a oportunidade de conquistar seu bem.</p>
-      <p>Assim que contemplado, você pode adquirir seu imóvel ou automóvel com a carta de crédito, negociando diretamente com o vendedor que preferir.</p>
-    </section>
-
-    <section>
-      <h2>Por que Escolher um Consórcio?</h2>
-      <p>O consórcio é uma alternativa inteligente para quem deseja comprar um bem sem contrair dívidas com altos juros, como ocorre em financiamentos tradicionais. Além disso, você tem mais controle sobre seu orçamento, já que as parcelas são fixas e planejadas.</p>
-      <p>É ideal para quem busca:</p>
-      <ul>
-        <li>Planejamento financeiro de médio a longo prazo;</li>
-        <li>Evitar dívidas com juros abusivos;</li>
-        <li>Flexibilidade para escolher o bem desejado;</li>
-        <li>Participar de sorteios para antecipar a aquisição;</li>
-        <li>Segurança e transparência, pois o consórcio é regulado pelo Banco Central.</li>
+	<li>📌 Atendimento exclusivo e personalizado</li>
+	<p>Você é único, e seu planejamento também deve ser. Ofereço um atendimento individualizado, com foco nas suas metas e no seu momento financeiro.<p>
+        <li>📱 Consultoria online ou presencial, com flexibilidade total</li>
+	<p>Onde você estiver, estou pronto para atender. Uso canais digitais e presenciais para garantir praticidade, proximidade e agilidade no seu processo.<p>
+        <li>📊 Acompanhamento até a contemplação</li>
+	<p>Você não está sozinho. Estarei ao seu lado em todas as etapas: da simulação à escolha do plano, da estratégia de lance até o uso inteligente da sua carta de crédito.<p>
+        <li>🏅 Parcerias com administradoras autorizadas pelo Banco Central</li>
+	<p>Trabalho apenas com instituições sólidas, regulamentadas e reconhecidas, garantindo segurança, confiança e transparência em todo o processo.<p>
+        <li>🧩 Planos sob medida conforme seu perfil financeiro</li>
+	<p>Não ofereço soluções genéricas. Montamos juntos o plano ideal, alinhado ao seu orçamento, prazo desejado e objetivos de curto, médio e longo prazo.<p>
       </ul>
     </section>
 
     <section>
-      <h2>Dicas para Aproveitar Melhor seu Consórcio</h2>
-      <ul>
-        <li><strong>Esteja atento ao pagamento das parcelas:</strong> manter as parcelas em dia é fundamental para participar das assembleias de contemplação.</li>
-        <li><strong>Planeje seus lances:</strong> ofereça lances estratégicos para aumentar suas chances de contemplação antecipada.</li>
-        <li><strong>Escolha o consórcio adequado:</strong> avalie o prazo, valor das parcelas e condições que melhor atendam seu perfil.</li>
-        <li><strong>Fique atento às taxas:</strong> a taxa de administração e outros custos devem estar claros no contrato.</li>
-      </ul>
+      <h2>📲 Fale comigo</h2>
+      <p><strong>Pronto para transformar seus objetivos em conquistas reais?</strong></p>
+	<p>ntre em contato agora mesmo e receba uma <strong>simulação gratuita e personalizada, sem compromisso.</strong><p>
+	<p>Vamos juntos encontrar o melhor caminho para você conquistar seu imóvel, veículo ou projeto com inteligência, segurança e economia.<p>
+	<p>📞 Consultoria especializada, rápida e sem burocracia.<p>
+	<p>Seu próximo passo começa com uma conversa. Me chame!<p>  
+
+	<a class="button" href="https://wa.me/5549933816445" target="_blank">💬 Fale comigo no WhatsApp</a>
     </section>
 
-    <section>
-      <h2>Consórcio Imóvel x Automóvel</h2>
-      <p>Ambos são ótimas opções, mas possuem características diferentes:</p>
-      <ul>
-        <li><strong>Imóvel:</strong> Ideal para quem busca segurança e investimento a longo prazo. A carta de crédito pode ser usada para compra, construção ou reforma.</li>
-        <li><strong>Automóvel:</strong> Para quem precisa de mobilidade e quer parcelar seu carro ou moto com facilidade e sem juros.</li>
-      </ul>
-    </section>
+    <p class="quote">“Quem se planeja com inteligência, realiza com segurança. Vamos juntos transformar seu sonho em conquista.”</p>
+	<p><strong>Fabrício Cuchi</strong><p>
+  </div>
 
-    <section>
-      <h2>Quer Falar Comigo?</h2>
-      <p>Preencha o formulário abaixo para que eu possa entender melhor seu interesse e entrar em contato com uma proposta personalizada:</p>
-
-      <form id="consorcio-form" action="https://formspree.io/f/mldnkqjz" method="POST" autocomplete="off" novalidate>
-        <label for="nome">Nome completo:</label>
-        <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required />
-
-        <label for="telefone">Telefone / WhatsApp:</label>
-        <input type="tel" id="telefone" name="telefone" placeholder="(DDD) 99999-9999" pattern="[\d\s()+-]{8,}" required />
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" placeholder="seu@email.com" required />
-
-        <label for="bem">Qual bem deseja?</label>
-        <select id="bem" name="bem" required>
-          <option value="" disabled selected>Selecione...</option>
-          <option value="Imóvel">Imóvel</option>
-          <option value="Automóvel">Automóvel</option>
-        </select>
-
-        <label for="valor">Valor aproximado da carta de crédito:</label>
-        <input type="text" id="valor" name="valor" placeholder="Ex: R$ 100.000" required />
-
-        <label for="mensagem">Mensagem adicional (opcional):</label>
-        <textarea id="mensagem" name="mensagem" placeholder="Dúvidas, tipo de imóvel ou carro, cidade..."></textarea>
-
-        <button type="submit">Enviar</button>
-
-        <div class="success-message" id="success-message">
-          ✅ Sua solicitação foi enviada com sucesso! Em breve entraremos em contato.
-        </div>
-      </form>
-    </section>
-  </main>
-
-  <a
-    href="https://wa.me/5549933816445"
-    target="_blank"
-    rel="noopener"
-    class="whatsapp-float"
-    aria-label="WhatsApp Fabrício"
-  >
-    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <path d="M16 3C9.372 3 4 8.372 4 15c0 2.566.865 4.928 2.3 6.785L4 29l7.315-2.199A11.967 11.967 0 0 0 16 27c6.628 0 12-5.372 12-12S22.628 3 16 3zm0 22c-1.897 0-3.71-.548-5.22-1.496l-.373-.223-4.35 1.306 1.336-4.22-.246-.388A9.01 9.01 0 0 1 7 15c0-4.963 4.037-9 9-9s9 4.037 9 9-4.037 9-9 9z" />
-      <path d="M21.554 18.786c-.324-.162-1.913-.945-2.208-1.054-.295-.109-.51-.162-.726.163-.216.324-.833 1.054-1.02 1.271-.187.216-.374.243-.698.081-.324-.162-1.364-.502-2.6-1.607-.96-.856-1.608-1.912-1.8-2.236-.187-.324-.02-.498.143-.66.146-.146.324-.38.486-.57.162-.19.216-.324.324-.54.108-.216.054-.405-.027-.567-.081-.162-.726-1.75-1-.905-.273.841-.54.896-.757.912-.195.016-.42.016-.645.016s-.567-.081-.864-.405c-.297-.324-1.134-1.11-1.134-2.703 0-1.594 1.163-2.489 1.324-2.67.162-.19 2.289-2.918 5.547-3.99 2.126-.9 3.78-.995 4.04-1.004.27-.009.54.013.778.28.237.27.855 1.04.855 2.525 0 1.485-.855 2.92-.975 3.127-.12.216-.21.324-.425.54-.216.216-.45.567-.607.855-.162.27-.324.324-.6.54z" />
-    </svg>
+  <a href="https://wa.me/5549933816445" class="whatsapp-float" target="_blank" title="Fale comigo no WhatsApp">
+    <i class="fab fa-whatsapp"></i>
   </a>
 
   <footer>
-    &copy; 2025 Consultor Fabrício - Raros Capital. Todos os direitos reservados.
+    &copy; 2025 Fabrício Cuchi | Consultoria de Consórcios Exclusiva
   </footer>
-
-  <script>
-    const form = document.getElementById('consorcio-form');
-    const successMessage = document.getElementById('success-message');
-
-    // Inicialmente escondida
-    successMessage.style.display = 'none';
-
-    form.addEventListener('submit', async (event) => {
-      event.preventDefault();
-
-      const formData = new FormData(form);
-
-      try {
-        const response = await fetch(form.action, {
-          method: 'POST',
-          body: formData,
-          headers: {
-            'Accept': 'application/json'
-          }
-        });
-
-        if (response.ok) {
-          successMessage.style.display = 'block';
-          form.reset();
-        } else {
-          alert('Erro ao enviar o formulário. Por favor, tente novamente mais tarde.');
-        }
-      } catch (error) {
-        alert('Erro ao enviar o formulário. Verifique sua conexão e tente novamente.');
-      }
-    });
-  </script>
 
 </body>
 </html>
